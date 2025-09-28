@@ -1,0 +1,29 @@
+@url=http://localhost:3000
+@ruta=/rectangulos
+
+### Crear un nuevo rectángulo.
+POST {{url}}{{ruta}}
+Content-Type: application/json
+
+{
+    "ladoA": 14.5,
+    "ladoB": 6.5
+}
+
+### Lista de todos los rectángulos existentes.
+GET {{url}}{{ruta}}
+
+### Filtrar un rectángulo por su ID
+GET {{url}}{{ruta}}/1
+
+### Modificar un rectángulo por su ID.
+PUT {{url}}{{ruta}}/6
+Content-Type: application/json
+
+{
+    "ladoA": 7.0,
+    "ladoB": 3.5
+}
+
+### Eliminar un rectángulo por su ID.
+DELETE {{url}}{{ruta}}/1
