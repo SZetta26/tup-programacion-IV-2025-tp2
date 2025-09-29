@@ -1,0 +1,26 @@
+@url=http://localhost:3000
+
+### Listar TODAS las materias.
+GET {{url}}/materias
+
+### Ver el detalle de una materia.
+GET {{url}}/materias/2
+
+### Crear una nueva materia.
+POST {{url}}/materias
+Content-Type: application/json
+
+{
+    "nombre": "Biologia"
+}
+
+### Modificar el nombre de una materia.
+PUT {{url}}/materias/2
+Content-Type: application/json
+
+{
+    "nombre": "Programacion"
+}
+
+### Eliminar una materia.
+DELETE {{url}}/materias/1
