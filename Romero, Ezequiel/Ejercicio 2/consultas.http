@@ -1,0 +1,53 @@
+@url=http://localhost:3000
+@ruta=/tareas
+
+### Listado de todas las tareas.
+GET {{url}}{{ruta}}
+
+### Filtro de tareas COMPLETADAS.
+GET {{url}}{{ruta}}?completada=true
+
+### Filtro de tareas POR COMPLETAR.
+GET {{url}}{{ruta}}?completada=false
+
+### Crear nueva tarea por completar.
+POST {{url}}{{ruta}}
+Content-Type: application/json
+
+{
+    "nombre": "Ordenar la habitacion"
+}
+
+### Crear nueva tarea y marcarla como completada.
+POST {{url}}{{ruta}}
+Content-Type: application/json
+
+{
+    "nombre": "Hacer las compras",
+    "completada": true
+}
+
+### Crear tarea duplicada.
+POST {{url}}{{ruta}}
+Content-Type: application/json
+
+{
+    "nombre": "Ordenar la habitacion"
+}
+
+### Ver detalles de una tarea.
+GET {{url}}{{ruta}}/3
+
+### Marcar tarea como completada.
+PUT {{url}}{{ruta}}/4
+Content-Type: application/json
+
+{
+    "completada": true
+}
+
+### Eliminar una tarea.
+DELETE {{url}}{{ruta}}/4
+
+### Intentar eliminar tarea no existente.
+DELETE {{url}}{{ruta}}/999
